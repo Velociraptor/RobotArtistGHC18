@@ -12,7 +12,7 @@ void setup() {
   // Set up motors to run when instructed
   AFMS.begin();
   markerMotor.attach(10);
-  markerMotor.write(90);
+  markerMotor.write(0);
   leftMotor->setSpeed(10);
   rightMotor->setSpeed(10);
   leftMotor->run(RELEASE);
@@ -20,16 +20,37 @@ void setup() {
 }
 
 // Actuate the servo to touch the pen to the paper
-void penDown()
+void _penDown()
 {
   markerMotor.write(0);
 }
 
 // Actuate the servo to tilt the pen up off the paper
-void penUp()
+void _penUp()
 {
-  markerMotor.write(90);
+  markerMotor.write(75);
 }
+
+static bool _putPenDown = false;
+
+void wait(unsigned long time_ms)
+{
+  unsigned long wait_until = millis() + time_ms;
+  do
+  {
+    if (_putPenDown)
+    {
+      _penDown();
+    }
+    else
+    {
+      _penUp();
+    }
+  } while (millis() < wait_until);
+}
+
+void penDown() { _putPenDown = true; wait(0); }
+void penUp() { _putPenDown = false; wait(0); }
 
 // Drive forward at specified speed (0-100%) for specified time (in milliseconds)
 void driveForward(int speed_pct, int time_ms)
@@ -39,7 +60,7 @@ void driveForward(int speed_pct, int time_ms)
   rightMotor->setSpeed(speed_val);
   leftMotor->run(FORWARD);
   rightMotor->run(FORWARD);
-  delay(time_ms);
+  wait(time_ms);
   leftMotor->run(RELEASE);
   rightMotor->run(RELEASE);
 }
@@ -52,7 +73,7 @@ void turnLeft(int time_ms)
 {
   rightMotor->setSpeed(100);
   rightMotor->run(FORWARD);
-  delay(time_ms);
+  wait(time_ms);
   rightMotor->run(RELEASE);
 }
 
@@ -61,7 +82,7 @@ void turnRight(int time_ms)
 {
   leftMotor->setSpeed(100);
   leftMotor->run(FORWARD);
-  delay(time_ms);
+  wait(time_ms);
   leftMotor->run(RELEASE);
 }
 
@@ -72,7 +93,7 @@ void drawSquare(int sideLength)
   penDown();
   for (int i=0; i<4; i++)
   {
-    driveForward(sideLength * scaleFactor);
+    driveForward(25, sideLength * scaleFactor);
     turnRight();
   }
 }
@@ -97,10 +118,19 @@ void starter()
   turnLeft();
 }
 
-void loop() {
-  //starter();
+void drawPicture()
+{
   penDown();
-  delay(1000);
+  wait(5000);
   penUp();
-  delay(1000);
+}
+
+void loop() {
+  static bool firstRun = true;
+  wait(5000);
+  if (firstRun)
+  {
+    firstRun = false;
+    drawPicture();
+  }
 }
