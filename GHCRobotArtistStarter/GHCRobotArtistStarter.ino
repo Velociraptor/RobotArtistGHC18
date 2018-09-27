@@ -22,17 +22,17 @@ void setup() {
 // Actuate the servo to touch the pen to the paper
 void _penDown()
 {
-  markerMotor.write(0);
+  markerMotor.write(75);
 }
 
 // Actuate the servo to tilt the pen up off the paper
 void _penUp()
 {
-  markerMotor.write(75);
+  markerMotor.write(0);
 }
 
+// Smarter "wait" to keep pen in position
 static bool _putPenDown = false;
-
 void wait(unsigned long time_ms)
 {
   unsigned long wait_until = millis() + time_ms;
@@ -86,48 +86,23 @@ void turnRight(int time_ms)
   leftMotor->run(RELEASE);
 }
 
-// Testing... TODO: REMOVE THESE FUNCTIONS AFTER TESTING
-void drawSquare(int sideLength)
-{
-  int scaleFactor = 50;
-  penDown();
-  for (int i=0; i<4; i++)
-  {
-    driveForward(25, sideLength * scaleFactor);
-    turnRight();
-  }
-}
-
-void drawArc(int radius, int angle)
-{
-  
-}
-
-void drawGHC()
-{
-  
-}
-
-void starter()
-{
-  penDown();
-  driveForward(20, 1000);
-  penUp();
-  turnRight();
-  delay(1000);
-  turnLeft();
-}
-
 void drawPicture()
 {
+  // Example code -- Fill in your own code here!
+  driveForward(60, 1000);
+  turnRight(1000);
+  wait(500);
+  turnLeft(1000);
+  wait(500);
   penDown();
-  wait(5000);
+  wait(1000);
   penUp();
 }
 
 void loop() {
   static bool firstRun = true;
-  wait(5000);
+  // Wait a few seconds to make sure the robot is on the table before motors run
+  wait(3000);
   if (firstRun)
   {
     firstRun = false;
