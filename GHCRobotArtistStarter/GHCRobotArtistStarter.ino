@@ -12,7 +12,7 @@ void setup() {
   // Set up motors to run when instructed
   AFMS.begin();
   markerMotor.attach(10);
-  markerMotor.write(0);
+  markerMotor.write(180);
   leftMotor->setSpeed(10);
   rightMotor->setSpeed(10);
   leftMotor->run(RELEASE);
@@ -22,13 +22,13 @@ void setup() {
 // Actuate the servo to touch the pen to the paper
 void _penDown()
 {
-  markerMotor.write(75);
+  markerMotor.write(105);
 }
 
 // Actuate the servo to tilt the pen up off the paper
 void _penUp()
 {
-  markerMotor.write(0);
+  markerMotor.write(180);
 }
 
 // Smarter "wait" to keep pen in position
