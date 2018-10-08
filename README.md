@@ -6,10 +6,14 @@ The GHCRobotArtistStarter folder and included .ino file contain some starter fun
 
 # Example Code
 We have provided some code that we experimented with to draw a couple of different example shapes, in the ExampleDrawings directory.
-TBD - Example Images
+![Sample Robot Drawing Images]
+(https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/ExampleDrawingsOutput.png)
 
 # Robot Features
-TBD
+![Robot Architecture Features]
+(https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/RobotArchitecture.png)
+![Robot Control Features]
+(https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/RobotControlFeatures.png)
 
 # Assembly Instructions
 TBD
@@ -18,5 +22,4 @@ TBD
 We've included the list of materials we used for building our workshop robots. Of course this is just one option of a kit of parts, but this set allowed us to have all the capabilities we were looking for and were available in the quantities we needed.
 
 # Chassis Design & Script
-Our robot chassis design is pretty cool! It's a code-generated .svg file that can be read by laser-cutter software to cut a robot chassis (or many) out of acrylic or other plastic. Check out the code and the generated .svg in the Chassis directory (TBD).
-
+Our robot chassis design is pretty cool! It's a code-generated .svg file that can be read by laser-cutter software to cut a robot chassis (or many) out of acrylic or other plastic. Check out the code and the generated .svg in the chassis directory.
