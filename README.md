@@ -2,7 +2,7 @@
 Information and starter code for the Program a Robot Artist workshop presented at the 2018 Grace Hopper Celebration by Evelyn Parenteau and Hannah Sarver. We built custom Arduino-based drawing robots for use in this workshop, but will be working to include enough information here for anyone to replicate the workshop. Please feel free to reach out to us at hbsarver@gmail.com with questions or comments!
 
 # Starter Code
-The GHCRobotArtistStarter folder and included .ino file contain some starter functions (ie drive_forward, turnLeft) that can be used to build up code to draw shapes. These are suggestions and can be modified, and we hope the documentation is sufficient to tell what they're each doing. Modify the "drawPicture" function to draw your desired design -- we recommend starting with something seemingly simple like drawing a square to get a sense of the challenges working with a real-world robot.
+The GHCRobotArtistStarter folder and included .ino file contain some starter functions (ie drive_forward, turnLeft) that can be used to build up code to draw shapes. To get started, simply load the .ino in the Arduino IDE and upload to your robot via serial cable. These are suggestions and can be modified, and we hope the documentation is sufficient to tell what they're each doing. Modify the "drawPicture" function to draw your desired design -- we recommend starting with something seemingly simple like drawing a square to get a sense of the challenges working with a real-world robot.
 
 # Example Code
 We have provided some code that we experimented with to draw a couple of different example shapes, in the ExampleDrawings directory.
