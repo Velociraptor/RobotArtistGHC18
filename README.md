@@ -6,14 +6,11 @@ The GHCRobotArtistStarter folder and included .ino file contain some starter fun
 
 # Example Code
 We have provided some code that we experimented with to draw a couple of different example shapes, in the ExampleDrawings directory.
-![Sample Robot Drawing Images]
-(https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/ExampleDrawingsOutput.png)
+![Sample Robot Drawing Images](https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/ExampleDrawingsOutput.png)
 
 # Robot Features
-![Robot Architecture Features]
-(https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/RobotArchitecture.png)
-![Robot Control Features]
-(https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/RobotControlFeatures.png)
+![Robot Architecture Features](https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/RobotArchitecture.png)
+![Robot Control Features](https://github.com/Velociraptor/RobotArtistGHC18/blob/master/Images/RobotControlFeatures.png)
 
 # Assembly Instructions
 TBD
